@@ -1,9 +1,8 @@
 # ProgrammingAssignment3
 
 
-## read train and test files.
-    setwd("C:/RWorkingDir/dataprocessing/data/UCI HAR Dataset")
-    
+## read training and test files.
+   
     x_test<-read.table("test/X_test.txt")
     y_test<-read.table("test/y_test.txt")
     
@@ -13,6 +12,7 @@
     subject_train<-read.table("train/subject_train.txt")
     subject_test<-read.table("test/subject_test.txt")
     
+## Merging x, y and subject training and test files   
     x_data<-rbind(x_test, x_train)
     
     y_data<-rbind(y_test, y_train)
@@ -27,7 +27,7 @@
     x_data<-x_data[, grep("-(mean|std)\\(\\)", conames(x_data))]
     
 
-    #############################
+#############################
     ## read activities.labels file and rename and reshape y_data columns
     
     act<-read.table("activity_labels.txt")
